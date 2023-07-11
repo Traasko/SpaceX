@@ -1,0 +1,56 @@
+Page liste de l'équipage (Accueil ou onglet) :
+    - Barre de recherche dynamique par nom ou agence
+    - Affichage de tous les membres, 4 colonnes, 4 personnes par lignes
+        - Nom
+        - Agence
+        - Balise IMG de l'individu
+        - Lien vers Wikipédia
+        - (Bonus) Voir si on peut afficher les infos de leurs décollages
+Page Onglet Historique :
+    - Liste d'articles
+        - Nom
+        - Date
+        au clic sur un article :
+            - Details
+Page À propos (Footer) :
+    - Infos sur l'entreprise :
+        - Adresse
+        - Ville
+        - Etat
+        - Nom
+        - Fondateur et PDG
+        - Date de création
+        - Nombre d'employés
+        - Nombre de véhicules/Fusées ?
+        - Nombre de sites de lancement
+        - Nombre de sites de tests
+        - coo
+        - cto propulsion
+        - valeur de l'entreprise
+        - description
+    - Liens de l'entreprise :
+        - Site
+        - Flickr
+        - Twitter
+        - Twitter du PDG
+Page Fusées :
+    - Hauteur
+    - Diamètre
+    - Poids
+    - Premier niveau, données stechniques
+    - Second niveau, données techniques
+    - Moteur, données techniques, marque, version...
+    - Pieds d'atterissage si existant
+    - Payload
+    - Nom
+    - Type
+    - En activité
+    - étages
+    - Booster
+    - couts
+    - succès %
+    - premier décollage
+    - pays
+    - entreprise
+    - wiki
+    - description
