@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NoMatch from './NoMatch';
 import Rockets from '../pages/Rockets';
+import RocketDetails from '../components/RocketsDetails';
 import Crew from '../pages/Crew';
 import History from '../pages/History';
 import Company from '../pages/Company';
@@ -15,6 +16,7 @@ const Router = () => {
                     <Route path="/history" element={<History />} />
                     <Route path="/company" element={<Company />} />
                     <Route path="/rockets" element={<Rockets />} />
+                    <Route path="/rockets/:id" element={<RocketDetails />} />
                     <Route path="*" element={<NoMatch />} />
                 </Routes>
             </Navigation>
