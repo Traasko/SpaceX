@@ -37,6 +37,9 @@ const Navigation = ({ children }) => {
                 <Link to="/rockets" className="nav-link">
                   Fusées
                 </Link>
+                <Link to="/quiz" className="nav-link">
+                  Quiz
+                </Link>
               </div>
             </div>
           </div>

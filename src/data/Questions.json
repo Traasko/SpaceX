@@ -1,0 +1,205 @@
+{
+    "questions": [
+      {
+        "statement": "La Lune est le plus grand satellite naturel de la Terre.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La Station spatiale internationale (ISS) est habitée en permanence.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La planète Mars est surnommée la 'Planète Rouge'.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "SpaceX a été fondée par Elon Musk.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La première personne à avoir marché sur la Lune est Neil Armstrong.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La fusée Falcon Heavy de SpaceX est actuellement la plus puissante du monde.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La ceinture d'astéroïdes se situe entre Mars et Jupiter.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La NASA est l'agence spatiale russe.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Faux"
+      },
+      {
+        "statement": "La mission Apollo 11 a été la première à amener des astronautes sur Mars.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Faux"
+      },
+      {
+        "statement": "Les astronautes de la NASA sont formés à la Neutral Buoyancy Laboratory (NBL) pour simuler l'apesanteur.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "Le télescope spatial Hubble a été lancé par SpaceX.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Faux"
+      },
+      {
+        "statement": "La mission Mars One prévoit d'établir une colonie permanente sur Mars.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Faux"
+      },
+      {
+        "statement": "Les astronautes utilisent des combinaisons spatiales pour se protéger du vide spatial.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La navette spatiale américaine Atlantis a effectué son dernier vol en 2011.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La mission Voyager 1 a atteint les confins du système solaire.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La planète Pluton a été reclassée en tant que planète naine.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "Le télescope spatial James Webb est le successeur du télescope Hubble.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "La mission Apollo 13 a été un échec total et aucun astronaute n'est revenu sur Terre.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Faux"
+      },
+      {
+        "statement": "La première femme astronaute à effectuer une sortie dans l'espace est Valentina Tereshkova.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Faux"
+      },
+      {
+        "statement": "SpaceX a réussi à faire atterrir et réutiliser des fusées.",
+        "options": ["Vrai", "Faux"],
+        "answer": "Vrai"
+      },
+      {
+        "statement": "Quelle est la plus grande planète du système solaire ?",
+        "options": ["Mercure", "Vénus", "Jupiter", "Mars"],
+        "answer": "Jupiter"
+      },
+      {
+        "statement": "Quel est le plus grand satellite naturel de la Terre ?",
+        "options": ["Lune", "Titan", "Ganymède", "Europe"],
+        "answer": "Lune"
+      },
+      {
+        "statement": "Quelle est la planète la plus proche du Soleil ?",
+        "options": ["Vénus", "Mercure", "Mars", "Jupiter"],
+        "answer": "Mercure"
+      },
+      {
+        "statement": "Qui a été le premier homme à marcher sur la Lune ?",
+        "options": ["Neil Armstrong", "Buzz Aldrin", "Alan Shepard", "John Glenn"],
+        "answer": "Neil Armstrong"
+      },
+      {
+        "statement": "Quelle est la durée approximative d'une journée sur Mars ?",
+        "options": ["24 heures", "26 heures", "1 mois", "36 heures"],
+        "answer": "24 heures"
+      },
+      {
+        "statement": "Quel télescope spatial a été lancé par la NASA en 1990 ?",
+        "options": ["Hubble", "Spitzer", "Chandra", "Kepler"],
+        "answer": "Hubble"
+      },
+      {
+        "statement": "Quelle est la plus grande lune de Saturne ?",
+        "options": ["Titan", "Encelade", "Dione", "Iapetus"],
+        "answer": "Titan"
+      },
+      {
+        "statement": "Qui a été le premier astronaute à effectuer un vol en orbite autour de la Terre ?",
+        "options": ["John Glenn", "Alan Shepard", "Gherman Titov", "Valentina Tereshkova"],
+        "answer": "Gherman Titov"
+      },
+      {
+        "statement": "Quel est le nom du premier vaisseau spatial réutilisable développé par SpaceX ?",
+        "options": ["Falcon 9", "Crew Dragon", "Starship", "Falcon Heavy"],
+        "answer": "Crew Dragon"
+      },
+      {
+        "statement": "Quelle est la plus petite planète du système solaire ?",
+        "options": ["Mercure", "Pluton", "Mars", "Vénus"],
+        "answer": "Mercure"
+      },
+      {
+        "statement": "Quel est le nom du télescope spatial lancé par l'Agence spatiale européenne (ESA) en 2009 ?",
+        "options": ["Hubble", "Spitzer", "Chandra", "Herschel"],
+        "answer": "Herschel"
+      },
+      {
+        "statement": "Quelle est la première femme astronaute à avoir effectué une sortie dans l'espace ?",
+        "options": ["Valentina Tereshkova", "Sally Ride", "Yelena Serova", "Mae Jemison"],
+        "answer": "Sally Ride"
+      },
+      {
+        "statement": "Quel est le nom de la fusée réutilisable développée par Blue Origin ?",
+        "options": ["Falcon 9", "Crew Dragon", "New Shepard", "Starship"],
+        "answer": "New Shepard"
+      },
+      {
+        "statement": "Quelle est la plus grande planète du système solaire ?",
+        "options": ["Jupiter", "Saturne", "Uranus", "Neptune"],
+        "answer": "Jupiter"
+      },
+      {
+        "statement": "Quelle est la mission de la NASA qui a permis d'envoyer des astronautes sur la Lune pour la première fois ?",
+        "options": ["Apollo 11", "Mercury 7", "Gemini 12", "Apollo 13"],
+        "answer": "Apollo 11"
+      },
+      {
+        "statement": "Quel est le nom du rover de la NASA qui a été envoyé sur Mars en 2020 ?",
+        "options": ["Curiosity", "Opportunity", "Perseverance", "Spirit"],
+        "answer": "Perseverance"
+      },
+      {
+        "statement": "Quel est le nom de la première mission spatiale habitée de SpaceX en partenariat avec la NASA ?",
+        "options": ["Crew Dragon Demo-1", "Apollo 11", "Gemini 7", "Artemis 1"],
+        "answer": "Crew Dragon Demo-1"
+      },
+      {
+        "statement": "Quelle est la planète la plus éloignée du Soleil dans le système solaire ?",
+        "options": ["Neptune", "Pluton", "Uranus", "Saturne"],
+        "answer": "Neptune"
+      },
+      {
+        "statement": "Quel est le nom du télescope spatial qui a détecté les premières ondes gravitationnelles en 2015 ?",
+        "options": ["Hubble", "Spitzer", "LISA", "LIGO"],
+        "answer": "LIGO"
+      },
+      {
+        "statement": "Quel est le nom du premier homme à avoir effectué un vol dans l'espace ?",
+        "options": ["Yuri Gagarin", "Neil Armstrong", "Alan Shepard", "Buzz Aldrin"],
+        "answer": "Yuri Gagarin"
+      }
+    ]
+  }
+  
