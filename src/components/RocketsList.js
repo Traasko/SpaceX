@@ -50,12 +50,12 @@ import Call from '../functions/Call';
 
 const RocketList = () => {
     const info = Call('https://api.spacexdata.com/v4/rockets');
-    if(info[0]) {
-    return (
-        <div>
-            <h1>SpaceX - Rockets</h1>
-            <p>{info[0].flickr_images}</p>
-            {/* <p>Description : {info.summary}</p>
+    if (info[0]) {
+        return (
+            <div>
+                <h1>SpaceX - Rockets</h1>
+                <p>{info[0].flickr_images}</p>
+                {/* <p>Description : {info.summary}</p>
             <p>Création: {info.founded}</p>
             <p>PDG : {info.ceo}</p>
             <p>
@@ -66,10 +66,9 @@ const RocketList = () => {
             <p>
                 Site : <a href={info.links?.website}>{info.links?.website}</a>
             </p> */}
-        </div>
-    );
-        }
-    
+            </div>
+        );
+    }
 };
 
 export default RocketList;

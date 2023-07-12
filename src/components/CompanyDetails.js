@@ -19,7 +19,9 @@ const SpaceXInfo = () => {
                 <p>Nb employées : {company.employees}</p>
                 <p>
                     Site :{' '}
-                    <a href={company.links?.website}>{company.links?.website}</a>
+                    <a href={company.links?.website}>
+                        {company.links?.website}
+                    </a>
                 </p>
             </div>
         );
