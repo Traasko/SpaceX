@@ -5,5 +5,6 @@ import Router from './router/Router';
  * @returns A component called "Routeur" is being returned.
  */
 export default function App() {
-  return <Router />;
+    return <Router />;
 }
+
