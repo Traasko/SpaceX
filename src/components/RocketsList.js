@@ -2,73 +2,62 @@
 // import Call from '../functions/Call';
 
 // const RocketList = () => {
-//   const [rockets, setRockets] = useState([]);
-//   const [events, setEvents] = useState(null);
-
-//     const arrayRockets = Call("https://api.spacexdata.com/v4/rockets");
-//     console.log(arrayRockets)
-//     const handleRocketClick = (rocket) => {
-//     setEvents(rocket);
-//   };
-//   if(arrayRockets[0]) {
-
-//       return (
-//           <div>
-//       <h1>SpaceX - Fusées</h1>
-//       <ul>
-//         {arrayRockets.map(rocket => (
-//             <li key={rocket.id} onClick={() => handleRocketClick(rocket)}>
-//             {rocket.name}
-//           </li>
-//         ))}
-//       </ul>
-
-//       {events && (
-//           <div>
-//           <h2>{events.name}</h2>
-//           <p>Taille : {events.height.meters} mètres</p>
-//           <p>Diamètre : {events.diameter.meters} mètres</p>
-//           <p>Poids : {events.mass.kg} kg</p>
-//           {/* <p>Country: {selectedRocket.country}</p>
-//           <p>First Flight: {selectedRocket.first_flight}</p>
-//           <p>Company: {selectedRocket.company}</p>
-//           <p>Description: {selectedRocket.description}</p>
-//           {selectedRocket.flickr_images.map((image, index) => (
-//               <img key={index} src={image} alt={selectedRocket.rocket_name} />
-//             ))} */}
+//     const info = Call('https://api.spacexdata.com/v4/rockets');
+//     if(info[0]) {
+//         console.log(info)
+//         const RocketDisplay = () => {
+//             let toDisplay = [];
+//             for (let i = 0; i < info.length; i++) {
+//                 const element = info[i];
+//                 toDisplay[i] = <><p>{element.flickr_images}</p></>
+//                 }
+//             return toDisplay;
+//         }
+//     return (
+//         <div>
+//             <h1>SpaceX - Rockets</h1>
+//         <RocketDisplay />
 //         </div>
-//       )}
-//     </div>
-//   );
-// }
+//     );
+//         }
+    
 // };
 
 // export default RocketList;
 
 import React, { useEffect, useState } from 'react';
-import Call from '../functions/Call';
+import axios from 'axios';
 
 const RocketList = () => {
-    const info = Call('https://api.spacexdata.com/v4/rockets');
-    if (info[0]) {
-        return (
-            <div>
-                <h1>SpaceX - Rockets</h1>
-                <p>{info[0].flickr_images}</p>
-                {/* <p>Description : {info.summary}</p>
-            <p>Création: {info.founded}</p>
-            <p>PDG : {info.ceo}</p>
-            <p>
-                Siège social : {info.headquarters?.address},{' '}
-                {info.headquarters?.city}, {info.headquarters?.state}
-            </p>
-            <p>Nb employées : {info.employees}</p>
-            <p>
-                Site : <a href={info.links?.website}>{info.links?.website}</a>
-            </p> */}
-            </div>
-        );
-    }
+  const [rockets, setRockets] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://api.spacexdata.com/v4/rockets');
+        setRockets(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Liste des versions de fusées SpaceX</h1>
+      {rockets.map((rocket) => (
+        <div key={rocket.rocket_id}>
+          <h2>{rocket.rocket_name}</h2>
+          <p>Hauteur : {rocket.height.meters} m</p>
+          <p>Diamètre : {rocket.diameter.meters} m</p>
+          <p>Masse : {rocket.mass.kg} kg</p>
+          <img src={rocket.flickr_images[0]} alt="Rocket" />
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default RocketList;
