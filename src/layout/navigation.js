@@ -6,9 +6,6 @@ const Navigation = ({ children }) => {
             <header>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#">
-                            Space X
-                        </a>
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -26,9 +23,9 @@ const Navigation = ({ children }) => {
                         >
                             <div className="navbar-nav">
                                 <Link to="/" className="nav-link">
-                                    Accueil
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/SpaceX-Logo-Xonly.svg"></img>
                                 </Link>
-                                <Link to="/crew" className="nav-link">
+                                <Link to="/" className="nav-link">
                                     Accueil
                                 </Link>
                                 <Link to="/history" className="nav-link">
@@ -40,14 +37,14 @@ const Navigation = ({ children }) => {
                                 <Link to="/rockets" className="nav-link">
                                     Fusées
                                 </Link>
-                                <Link to="/quiz" className="nav-link">
-                                    Quiz
-                                </Link>
                                 <Link to="/latest_launch" className="nav-link">
                                     Last launch
                                 </Link>
                                 <Link to="/roadster" className="nav-link">
                                     Roadster
+                                </Link>
+                                <Link to="/quiz" className="nav-link">
+                                    Quiz
                                 </Link>
                             </div>
                         </div>

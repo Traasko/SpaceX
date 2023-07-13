@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
-function LatestLaunched() {
+function LastLaunchInfo() {
     const [lastLaunch, setLastLaunch] = useState(null);
     const [crewMembers, setCrewMembers] = useState([]);
     const [capsules, setCapsules] = useState([]);
@@ -10,6 +11,7 @@ function LatestLaunched() {
     useEffect(() => {
         fetch('https://api.spacexdata.com/v5/launches/latest')
             .then((response) => response.json())
+
             .then((data) => {
                 setLastLaunch(data);
                 fetchCrewMembers(data.crew);
@@ -17,6 +19,7 @@ function LatestLaunched() {
                 fetchPayloads(data.payloads);
                 fetchLaunchpad(data.launchpad);
             })
+
             .catch((error) => {
                 console.error('Error fetching latest launch:', error);
             });
@@ -32,6 +35,7 @@ function LatestLaunched() {
                 ),
             ),
         )
+
             .then((data) => {
                 const crewMembersData = data.map((response) => response);
                 setCrewMembers(crewMembersData);
@@ -54,6 +58,7 @@ function LatestLaunched() {
                 setCapsules(data);
                 console.log('capsules', data);
             })
+
             .catch((error) => {
                 console.error('Error fetching capsules:', error);
             });
@@ -67,66 +72,84 @@ function LatestLaunched() {
         );
 
         Promise.all(requests)
+
             .then((data) => {
                 setPayloads(data);
                 console.log('capsules', data);
             })
+
             .catch((error) => {
                 console.error('Error fetching payloads:', error);
             });
     };
 
     const fetchLaunchpad = (launchpadId) => {
-        fetch(`https://api.spacexdata.com/v4/launchpads/${launchpadId}`).then(
-            (response) => response.json(),
-        );
-        console
-            .log('launchpad', launchpadId)
+        fetch(`https://api.spacexdata.com/v4/launchpads/${launchpadId}`)
+            .then((response) => response.json())
             .then((data) => {
                 setLaunchpad(data);
-                console.log('setLaunchpad', data);
+
+                console.log('launchpad', data);
             })
+
             .catch((error) => {
                 console.error('Error fetching launchpad:', error);
             });
     };
 
-    if (!lastLaunch) {
-        return <div>Chargement...</div>;
-    }
+    const formatDate = (dateString) => {
+        const dateObject = new Date(dateString);
+        const formattedDate = format(dateObject, "do 'of' MMMM yyyy");
+        return formattedDate;
+    };
 
     return (
         <div>
-            <h1>Dernier lancement</h1>
-            <h2>Details</h2>
-            <p>Numéro de vol : {lastLaunch.flight_number}</p>
-            <p>Nom de la mission : {lastLaunch.name}</p>
-            <p>Date : {lastLaunch.date_local}</p>
-            <h2>Membres</h2>
-            {crewMembers.map((crew) => (
-                <ul key={crew.id}>
-                    <li>{crew.name}</li>
-                </ul>
-            ))}
+            <h1>Last Launch Information</h1>
 
-            <h2>Capsules</h2>
+            <section>
+                <div>
+                    <h2>Details:</h2>
+                    <p>Flight Number {lastLaunch.flight_number}</p>
+                    <p>Mission {lastLaunch.name}</p>
+                    <p>{formatDate(lastLaunch.date_local)}</p>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h2>Crew Members</h2>
+                    <div>
+                        {crewMembers.map((crew) => (
+                            <div key={crew.id}>
+                                <h3>{crew.name}</h3>
+                                <img src={crew.image}></img>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <h2>Capsules:</h2>
             <ul>
                 {capsules.map((capsule) => (
                     <li key={capsule.id}>{capsule.serial}</li>
                 ))}
             </ul>
-            <h2>Payloads :</h2>
+
+            <h2>Payloads:</h2>
             <ul>
                 {payloads.map((payload) => (
                     <li key={payload.id}>{payload.name}</li>
                 ))}
             </ul>
-            <h2>Lancement</h2>
+
+            <h2>Launchpad:</h2>
             {launchpad && (
                 <div>
-                    <p>Nom : {launchpad.name}</p>
+                    <p>Name: {launchpad.name}</p>
                     <p>
-                        Lieu : {launchpad.locality}, {launchpad.region}
+                        Location: {launchpad.locality}, {launchpad.region}
                     </p>
                 </div>
             )}
@@ -134,4 +157,4 @@ function LatestLaunched() {
     );
 }
 
-export default LatestLaunched;
+export default LastLaunchInfo;

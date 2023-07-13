@@ -9,7 +9,7 @@ const EventList = () => {
                 <h1>Evenements</h1>
                 <ul>
                     {info.map((info) => (
-                        <li key={info.name}>
+                        <li key={info.title}>
                             <h2>{info.name}</h2>
                             <p>Date : {info.event_date_utc}</p>
                             <p>{info.details}</p>
