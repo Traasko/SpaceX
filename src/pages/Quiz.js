@@ -125,7 +125,7 @@ const Quiz = () => {
                             options={options}
                         />
                     </div>
-                    <button id="toggle" onClick={generateQuestion}>
+                    <button className="btn btn-outline-secondary" id="toggle" onClick={generateQuestion}>
                         Suivant
                     </button>
                     <div>Score : {score}</div>
