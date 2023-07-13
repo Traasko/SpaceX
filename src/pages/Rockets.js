@@ -1,4 +1,4 @@
-import RocketsComponent from '../components/RocketsList';
+import RocketsComponent from '../components/Rockets/RocketsList';
 
 const Rockets = () => {
     return (

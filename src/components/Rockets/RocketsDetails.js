@@ -43,8 +43,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
-function RocketDetails(){
+function RocketDetails() {
     const [rocket, setRocket] = useState(null);
     const { id } = useParams();
 
@@ -73,7 +72,7 @@ function RocketDetails(){
     }, [id]);
 
     if (rocket === null) {
-        return <div>Membre introuvable</div>;
+        return <div>Fusée introuvable</div>;
     }
 
     document.title = `${rocket.name}`;
@@ -131,7 +130,6 @@ function RocketDetails(){
                                 {rocket.first_flight}
                             </td>
                         </tr>
-
                         <tr>
                             <td className="td-float-l">Stage</td>
 

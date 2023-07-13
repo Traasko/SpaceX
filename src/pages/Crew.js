@@ -1,4 +1,4 @@
-import CrewComponent from '../components/CrewList';
+import CrewComponent from '../components/Crew/CrewList';
 
 const Crew = () => {
     return (

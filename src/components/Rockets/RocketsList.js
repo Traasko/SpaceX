@@ -1,3 +1,51 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+const RocketList = () => {
+    const [rockets, setRockets] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(
+                    'https://api.spacexdata.com/v4/rockets',
+                );
+                setRockets(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return (
+        
+        <div>
+            <h1>Versions de fusées SpaceX</h1>
+            {rockets.map((rocket) => (
+                <div key={rocket.rocket_id}>
+                    <h2>
+                        <Link to={`/rockets/${rocket.id}`}>{rocket.name}</Link>
+                    </h2>
+                    <h2>{rocket.rocket_name}</h2>
+                    <p>Hauteur : {rocket.height.meters} m</p>
+                    <p>Diamètre : {rocket.diameter.meters} m</p>
+                    <p>Masse : {rocket.mass.kg} kg</p>
+                    <img
+                        src={rocket.flickr_images[0]}
+                        style={{ width: '200px' }}
+                        alt="Rocket"
+                    />
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default RocketList;
+
 // import React, { useEffect, useState } from 'react';
 // import Call from '../functions/Call';
 
@@ -24,46 +72,3 @@
 // };
 
 // export default RocketList;
-
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-
-const RocketList = () => {
-    const [rockets, setRockets] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(
-                    'https://api.spacexdata.com/v4/rockets',
-                );
-                setRockets(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    return (
-        <div>
-            <h1>Liste des versions de fusées SpaceX</h1>
-            {rockets.map((rocket) => (
-                <div key={rocket.rocket_id}>
-                    <h2>
-                        <Link to={`/rockets/${rocket.id}`}>{rocket.name}</Link>
-                    </h2>
-                    <h2>{rocket.rocket_name}</h2>
-                    <p>Hauteur : {rocket.height.meters} m</p>
-                    <p>Diamètre : {rocket.diameter.meters} m</p>
-                    <p>Masse : {rocket.mass.kg} kg</p>
-                    <img src={rocket.flickr_images[0]} style={{ width: '200px' }} alt="Rocket" />
-                </div>
-            ))}
-        </div>
-    );
-};
-
-export default RocketList;

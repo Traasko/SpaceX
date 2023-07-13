@@ -37,6 +37,12 @@ const Navigation = ({ children }) => {
                                 <Link to="/rockets" className="nav-link">
                                     Rockets
                                 </Link>
+                                <Link to="/latest_launch" className="nav-link">
+                                    Last launch
+                                </Link>
+                                <Link to="/roadster" className="nav-link">
+                                    Roadster
+                                </Link>
                             </div>
                         </div>
                     </div>
