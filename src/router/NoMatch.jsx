@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
 
 /**
  * This is a React component that displays a 404 error message with the current page path and a link to
@@ -8,7 +8,7 @@ import { Link, useLocation } from 'react-router-dom'
  * the home page using `Link` component from `react-router-dom`.
  */
 export default function NoMatch() {
-    let location = useLocation()
+    let location = useLocation();
 
     return (
         <center>
@@ -16,9 +16,9 @@ export default function NoMatch() {
             <code>Page : {location.pathname}</code>
             <br />
 
-            <Link to='/' className='btn btn-primary'>
+            <Link to="/" className="btn btn-primary">
                 Retour sur la page princpale
             </Link>
         </center>
-    )
+    );
 }
