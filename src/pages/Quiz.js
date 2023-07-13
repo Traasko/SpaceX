@@ -6,13 +6,14 @@ let array = Object.entries(Questions);
 const questionsList = array[0][1];
 questionsList.sort(() => Math.random() - 0.5);
 
-const Quiz = (answer) => {
+const Quiz = () => {
     const [questionState, setQuestionState] = useState(1);
     const [statement, setStatement] = useState('');
     const [options, setOptions] = useState([]);
     const [selected, setSelected] = useState(false);
     const [selectedOption, setSelectedOption] = useState(100);
     const [time, setTime] = useState(0);
+    const [timeLimit, setTimeLimit] = useState(false);
     const [score, setScore] = useState(0);
     const [trueAnswer, setTrueAnswer] = useState(
         questionsList[questionState - 1]['answer'],
@@ -27,6 +28,7 @@ const Quiz = (answer) => {
             setStatement(questionsList[questionState]['statement']);
             setSelectedOption(100);
             setTime(0);
+            setTimeLimit(false);
         }
     };
 
@@ -37,7 +39,6 @@ const Quiz = (answer) => {
         function scoring(answer) {
             if (selected === false) {
                 if (answer) {
-                    console.log(answer.target.id);
                     if (answer.target.value === trueAnswer) {
                         setScore(score + 1);
                     }
@@ -83,8 +84,9 @@ const Quiz = (answer) => {
             }, 1000);
 
             return () => {
-                if (time === 2) {
+                if (time === 2 && !timeLimit) {
                     setSelected(true);
+                    setTimeLimit(true);
                 }
                 clearInterval(timer);
             };
