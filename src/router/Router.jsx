@@ -6,6 +6,7 @@ import Crew from '../pages/Crew';
 import CrewDetails from '../components/Crew/CrewDetails';
 import History from '../pages/History';
 import Company from '../pages/Company';
+import Quiz from '../pages/Quiz';
 import Navigation from '../layout/navigation';
 import LatestLaunched from '../components/LatestLaunch';
 import Roadster from '../components/Roadster';
@@ -27,6 +28,8 @@ const Router = () => {
                         element={<LatestLaunched />}
                     />
                     <Route exact path="/roadster/" element={<Roadster />} />
+                    <Route path="/quiz" element={<Quiz />} />
+
                     <Route path="*" element={<NoMatch />} />
                 </Routes>
             </Navigation>

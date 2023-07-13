@@ -6,6 +6,9 @@ const Navigation = ({ children }) => {
             <header>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
                     <div className="container-fluid">
+                        <a className="navbar-brand" href="#">
+                            Space X
+                        </a>
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -23,19 +26,22 @@ const Navigation = ({ children }) => {
                         >
                             <div className="navbar-nav">
                                 <Link to="/" className="nav-link">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/SpaceX-Logo-Xonly.svg"></img>
+                                    Accueil
                                 </Link>
-                                <Link to="/" className="nav-link">
-                                    Crew
+                                <Link to="/crew" className="nav-link">
+                                    Accueil
                                 </Link>
                                 <Link to="/history" className="nav-link">
-                                    History
+                                    Histoire
                                 </Link>
                                 <Link to="/company" className="nav-link">
-                                    Company
+                                    Entreprise
                                 </Link>
                                 <Link to="/rockets" className="nav-link">
-                                    Rockets
+                                    Fusées
+                                </Link>
+                                <Link to="/quiz" className="nav-link">
+                                    Quiz
                                 </Link>
                                 <Link to="/latest_launch" className="nav-link">
                                     Last launch
