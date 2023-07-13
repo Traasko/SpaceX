@@ -5,7 +5,7 @@ import Questions from '../data/Questions';
 let array = Object.entries(Questions);
 const questionsList = array[0][1];
 questionsList.sort(() => Math.random() - 0.5);
-const timeToAnswer = 10;
+const timeToAnswer = 60;
 
 const Quiz = () => {
     const [questionState, setQuestionState] = useState(1);
@@ -105,9 +105,20 @@ const Quiz = () => {
     if (questionState < 12) {
         return (
             <>
-                <div className="section">
+                <div className="section section-quiz">
+                    <div>
+                        <div>Question {questionState - 1} sur 10</div>
+                        <meter
+                            id="fuel"
+                            min="0"
+                            max={timeToAnswer}
+                            low={timeToAnswer * 0.4}
+                            high={timeToAnswer * 0.7}
+                            optimum={timeToAnswer}
+                            value={time}
+                        ></meter>
+                    </div>
                     {statement}
-                    <div>Score : {score}</div>
                     <div className="options">
                         <Options
                             questionAnswer={questionAnswer}
@@ -117,14 +128,7 @@ const Quiz = () => {
                     <button id="toggle" onClick={generateQuestion}>
                         Suivant
                     </button>
-                    <div>
-                    <meter id="fuel"
-                        min="0" max={timeToAnswer}
-                        low={timeToAnswer*.4} high={timeToAnswer*.7} optimum={timeToAnswer}
-                        value={time}>
-
-       </meter></div>
-                    <div>{questionState - 1}/10</div>
+                    <div>Score : {score}</div>
                 </div>
             </>
         );

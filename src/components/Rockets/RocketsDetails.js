@@ -78,7 +78,7 @@ function RocketDetails() {
     document.title = `${rocket.name}`;
 
     return (
-        <div className='section section-rocket'>
+        <div className="section section-rocket">
             <h2>{rocket.name}</h2>
             <img
                 src={rocket.flickr_images[1]}
@@ -86,7 +86,6 @@ function RocketDetails() {
             ></img>
 
             <div id="overview">
-
                 <h1>OVERVIEW</h1>
 
                 <table>

@@ -6,7 +6,7 @@ const SpaceXInfo = () => {
     const company = Call('https://api.spacexdata.com/v4/company');
     if (company) {
         return (
-            <div className='section'>
+            <div className="section">
                 <div>
                     <h1>Informations SpaceX</h1>
                     <h2>Nom : {company.name}</h2>
