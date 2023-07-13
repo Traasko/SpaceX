@@ -11,3 +11,54 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
 }
+
+#root {
+    /* background-image:url('../img/bg.jpg');
+    background-size:cover;
+    background-attachment: fixed; */
+}
+
+input, button {
+    border-radius:10px;
+    margin:20px;
+}
+
+h1, h2 {
+    text-align:center;
+}
+
+#evenement ul li {
+    list-style:none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin:50px;
+    padding:30px;
+    border-radius:20px;
+}
+
+.section {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin:50px;
+    padding:30px;
+    border-radius:20px;
+}
+
+.member-container {
+    margin:50px auto;
+    width:50%;
+    height:50%;
+}
+
+.section-rocket img {
+    display:block;
+    margin:auto;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: red;
+}
+meter::-webkit-meter-even-less-good-value {
+    background-color:green;
+}
+meter::-webkit-meter-suboptimum-value {
+      background:orange;
+}

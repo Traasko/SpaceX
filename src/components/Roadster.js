@@ -24,7 +24,7 @@ const Roadster = () => {
     }
 
     return (
-        <div>
+        <div className="section">
             <h1>Roadster d'Elon Musk</h1>
             <p>Coordonnées actuelles de position : </p>
             <img src={roadsterInfo.flickr_images} />

@@ -18,7 +18,7 @@
 }
 
 .selected {
-    border: 3px solid grey;
+    border: 3px solid black;
     opacity: 0.6;
 }
 

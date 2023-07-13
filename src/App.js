@@ -1,4 +1,5 @@
 import Router from './router/Router';
+import './assets/style/index.css';
 
 /**
  * The function exports a component called "App" that returns a "Routeur" component.
