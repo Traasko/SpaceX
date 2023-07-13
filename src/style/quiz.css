@@ -1,0 +1,31 @@
+.options {
+    display: flex;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options button {
+    width: 40%;
+}
+
+#toggle {
+    margin: auto;
+    display: block;
+}
+
+.selected {
+    border: 3px solid grey;
+    opacity: 0.6;
+}
+
+.goodAnswer {
+    background-color: green;
+}
+
+.badAnswer {
+    background-color: red;
+}
