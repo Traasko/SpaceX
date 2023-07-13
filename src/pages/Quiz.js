@@ -12,7 +12,7 @@ const Quiz = (answer) => {
     const [options, setOptions] = useState([]);
     const [selected, setSelected] = useState(false);
     const [selectedOption, setSelectedOption] = useState(100);
-    const [time, setTime] = useState(0)
+    const [time, setTime] = useState(0);
     const [score, setScore] = useState(0);
     const [trueAnswer, setTrueAnswer] = useState(
         questionsList[questionState - 1]['answer'],
@@ -50,50 +50,45 @@ const Quiz = (answer) => {
             let selection;
             let selectionBadAnswer;
             let goodAnswer;
-            return (
-                    options.map(
-                        (option, index) => (
-                            (selection =
-                                props.selected == index ? 'selected' : ''),
-                            (selectionBadAnswer =
-                                props.selected == index && option != trueAnswer
-                                    ? 'badAnswer'
-                                    : ''),
-                            (goodAnswer =
-                                selected && trueAnswer == option
-                                    ? 'goodAnswer'
-                                    : ''),
-                            (
-                                <>
-                                    <button
-                                        key={index}
-                                        id={index}
-                                        onClick={scoring}
-                                        value={option}
-                                        className={`btn btn-primary ${selection} ${selectionBadAnswer} ${goodAnswer}`}
-                                    >
-                                        {option}
-                                    </button>
-                                </>
-                            )
-                        ),
+            return options.map(
+                (option, index) => (
+                    (selection = props.selected == index ? 'selected' : ''),
+                    (selectionBadAnswer =
+                        props.selected == index && option != trueAnswer
+                            ? 'badAnswer'
+                            : ''),
+                    (goodAnswer =
+                        selected && trueAnswer == option ? 'goodAnswer' : ''),
+                    (
+                        <>
+                            <button
+                                key={index}
+                                id={index}
+                                onClick={scoring}
+                                value={option}
+                                className={`btn btn-primary ${selection} ${selectionBadAnswer} ${goodAnswer}`}
+                            >
+                                {option}
+                            </button>
+                        </>
                     )
+                ),
             );
-        };         
-            useEffect(() => {
-                const timer = setInterval(() => {
-                    if(time < 2 && selected === false) {
-                        setTime((prevTime) => prevTime + 1)
-                    }
-                }, 1000)
-         
-                return () => {
-                    if(time === 2) {
-                        setSelected(true);
-                    }
-                    clearInterval(timer)
+        };
+        useEffect(() => {
+            const timer = setInterval(() => {
+                if (time < 2 && selected === false) {
+                    setTime((prevTime) => prevTime + 1);
                 }
-            }, [])
+            }, 1000);
+
+            return () => {
+                if (time === 2) {
+                    setSelected(true);
+                }
+                clearInterval(timer);
+            };
+        }, []);
         return (
             <>
                 <GenerateOptions selected={selectedOption} />
@@ -104,31 +99,32 @@ const Quiz = (answer) => {
     if (questionState === 1) {
         generateQuestion();
     }
-    if(questionState < 12) {
+    if (questionState < 12) {
         return (
             <>
                 {statement}
                 <div>Score : {score}</div>
                 <div className="options">
-                    <Options questionAnswer={questionAnswer} options={options} />
+                    <Options
+                        questionAnswer={questionAnswer}
+                        options={options}
+                    />
                 </div>
                 <button id="toggle" onClick={generateQuestion}>
                     Suivant
                 </button>
                 <div>{time}</div>
-                <div>{questionState-1}/10</div>
+                <div>{questionState - 1}/10</div>
             </>
         );
-    }
-    else if(questionState === 12) {
+    } else if (questionState === 12) {
         let result;
-        if(score < 5) {
-            result = "Approfondissez vos connaissances pour vous améliorer !"
-        }
-        else if(score < 10) {
-            result = "Joli score ! Encore un petit effort pour être un expert !";
-        }
-        else if(score === 10) {
+        if (score < 5) {
+            result = 'Approfondissez vos connaissances pour vous améliorer !';
+        } else if (score < 10) {
+            result =
+                'Joli score ! Encore un petit effort pour être un expert !';
+        } else if (score === 10) {
             result = "Félicitations, vous êtes un expert de l'espace !";
         }
         return (
@@ -136,7 +132,7 @@ const Quiz = (answer) => {
                 <div>Score final {score}</div>
                 <div>{result}</div>
             </>
-        )
+        );
     }
 };
 
