@@ -11,3 +11,21 @@
 .options button {
     width: 40%;
 }
+
+#toggle {
+    margin:auto;
+    display:block;
+}
+
+.selected {
+    border:3px solid grey;
+    opacity:0.6;
+}
+
+.goodAnswer {
+    background-color:green;
+}
+
+.badAnswer {
+    background-color:red;
+}
