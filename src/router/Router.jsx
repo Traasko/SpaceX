@@ -21,7 +21,11 @@ const Router = () => {
                     <Route path="/company" element={<Company />} />
                     <Route path="/rockets" element={<Rockets />} />
                     <Route path="/rockets/:id" element={<RocketDetails />} />
-                    <Route exact path="/latest_launch/" element={<LatestLaunched />} />
+                    <Route
+                        exact
+                        path="/latest_launch/"
+                        element={<LatestLaunched />}
+                    />
                     <Route exact path="/roadster/" element={<Roadster />} />
                     <Route path="*" element={<NoMatch />} />
                 </Routes>

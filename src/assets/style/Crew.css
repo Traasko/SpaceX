@@ -4,9 +4,9 @@
     justify-content: center;
     max-width: 800px;
     margin: 0 auto;
-  }
-  
-  .crew-member {
+}
+
+.crew-member {
     text-align: center;
     width: 200px;
     margin: 20px;
@@ -14,24 +14,23 @@
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .crew-member img {
+}
+
+.crew-member img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     margin-bottom: 10px;
-  }
-  
-  .crew-member h3 {
+}
+
+.crew-member h3 {
     margin: 0;
     font-size: 18px;
     color: #333;
-  }
-  
-  .crew-member p {
+}
+
+.crew-member p {
     margin: 0;
     font-size: 14px;
     color: #777;
-  }
-  
+}

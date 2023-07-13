@@ -21,7 +21,6 @@ const RocketList = () => {
     }, []);
 
     return (
-        
         <div>
             <h1>Versions de fusées SpaceX</h1>
             {rockets.map((rocket) => (
