@@ -59,7 +59,11 @@ const RocketList = () => {
                     <p>Hauteur : {rocket.height.meters} m</p>
                     <p>Diamètre : {rocket.diameter.meters} m</p>
                     <p>Masse : {rocket.mass.kg} kg</p>
-                    <img src={rocket.flickr_images[0]} style={{ width: '200px' }} alt="Rocket" />
+                    <img
+                        src={rocket.flickr_images[0]}
+                        style={{ width: '200px' }}
+                        alt="Rocket"
+                    />
                 </div>
             ))}
         </div>

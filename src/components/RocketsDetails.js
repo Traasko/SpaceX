@@ -43,8 +43,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
-function RocketDetails(){
+function RocketDetails() {
     const [rocket, setRocket] = useState(null);
     const { id } = useParams();
 
