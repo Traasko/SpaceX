@@ -1,10 +1,11 @@
-import '../style/quiz.css';
+import '../assets/style/quiz.css';
 import React, { useEffect, useState } from 'react';
 import Questions from '../data/Questions';
 
 let array = Object.entries(Questions);
 const questionsList = array[0][1];
 questionsList.sort(() => Math.random() - 0.5);
+const timeToAnswer = 60;
 
 const Quiz = () => {
     const [questionState, setQuestionState] = useState(1);
@@ -78,13 +79,13 @@ const Quiz = () => {
         };
         useEffect(() => {
             const timer = setInterval(() => {
-                if (time < 2 && selected === false) {
+                if (time < timeToAnswer && selected === false) {
                     setTime((prevTime) => prevTime + 1);
                 }
             }, 1000);
 
             return () => {
-                if (time === 2 && !timeLimit) {
+                if (time === timeToAnswer && !timeLimit) {
                     setSelected(true);
                     setTimeLimit(true);
                 }
@@ -104,19 +105,31 @@ const Quiz = () => {
     if (questionState < 12) {
         return (
             <>
-                {statement}
-                <div>Score : {score}</div>
-                <div className="options">
-                    <Options
-                        questionAnswer={questionAnswer}
-                        options={options}
-                    />
+                <div className="section section-quiz">
+                    <div>
+                        <div>Question {questionState - 1} sur 10</div>
+                        <meter
+                            id="fuel"
+                            min="0"
+                            max={timeToAnswer}
+                            low={timeToAnswer * 0.4}
+                            high={timeToAnswer * 0.7}
+                            optimum={timeToAnswer}
+                            value={time}
+                        ></meter>
+                    </div>
+                    {statement}
+                    <div className="options">
+                        <Options
+                            questionAnswer={questionAnswer}
+                            options={options}
+                        />
+                    </div>
+                    <button className="btn btn-outline-secondary" id="toggle" onClick={generateQuestion}>
+                        Suivant
+                    </button>
+                    <div>Score : {score}</div>
                 </div>
-                <button id="toggle" onClick={generateQuestion}>
-                    Suivant
-                </button>
-                <div>{time}</div>
-                <div>{questionState - 1}/10</div>
             </>
         );
     } else if (questionState === 12) {
@@ -131,8 +144,10 @@ const Quiz = () => {
         }
         return (
             <>
-                <div>Score final {score}</div>
-                <div>{result}</div>
+                <div className="section">
+                    <div>Score final {score}</div>
+                    <div>{result}</div>
+                </div>
             </>
         );
     }

@@ -8,11 +8,26 @@
 
 .crew-member {
     text-align: center;
-    width: 200px;
     margin: 20px;
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crew-member ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.crew-member ul li {
+    width: 20%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

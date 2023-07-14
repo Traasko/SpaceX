@@ -51,7 +51,7 @@ const RocketList = () => {
         <div>
             <h1>Liste des versions de fusées SpaceX</h1>
             {rockets.map((rocket) => (
-                <div key={rocket.rocket_id}>
+                <div key={rocket.rocket_id} className="section">
                     <h2>
                         <Link to={`/rockets/${rocket.id}`}>{rocket.name}</Link>
                     </h2>

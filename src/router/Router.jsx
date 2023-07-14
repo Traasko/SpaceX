@@ -8,9 +8,9 @@ import History from '../pages/History';
 import Company from '../pages/Company';
 import Quiz from '../pages/Quiz';
 import Navigation from '../layout/navigation';
-import LatestLaunched from '../components/LatestLaunch';
+import '../assets/style/index.css';
 import Roadster from '../components/Roadster';
-
+import LastLaunch from '../components/LatestLaunch';
 const Router = () => {
     return (
         <BrowserRouter>
@@ -22,11 +22,7 @@ const Router = () => {
                     <Route path="/company" element={<Company />} />
                     <Route path="/rockets" element={<Rockets />} />
                     <Route path="/rockets/:id" element={<RocketDetails />} />
-                    <Route
-                        exact
-                        path="/latest_launch/"
-                        element={<LatestLaunched />}
-                    />
+                    <Route path="/latest_launch" element={<LastLaunch />} />
                     <Route exact path="/roadster/" element={<Roadster />} />
                     <Route path="/quiz" element={<Quiz />} />
 
